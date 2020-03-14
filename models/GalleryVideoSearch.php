@@ -1,21 +1,16 @@
 <?php
 
-namespace uraankhayayaal\gallery\models;
 
-use Yii;
+namespace gallery\models;
+
+
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use uraankhayayaal\gallery\models\GalleryVideo;
 
-/**
- * GalleryVideoSearch represents the model behind the search form of `uraankhayayaal\gallery\models\GalleryVideo`.
- */
+
 class GalleryVideoSearch extends GalleryVideo
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
             [['id', 'is_publish', 'status', 'created_at', 'updated_at'], 'integer'],
@@ -23,13 +18,13 @@ class GalleryVideoSearch extends GalleryVideo
         ];
     }
 
-    public function scenarios()
+    public function scenarios(): array
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    public function search($params)
+    public function search($params): ActiveDataProvider
     {
         $query = GalleryVideo::find();
 

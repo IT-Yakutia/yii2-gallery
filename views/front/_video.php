@@ -1,8 +1,5 @@
 <?php
 
-use yii\helpers\Html;
-use yii\helpers\Url;
-
 ?>
 
 	<?php if(count($videos) > 0) { ?>

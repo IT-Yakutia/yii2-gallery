@@ -1,7 +1,8 @@
 <?php
 
-use uraankhayayaal\gallery\assets\slider\SliderAsset;
-use uraankhayayaal\gallery\assets\album\AlbumAsset;
+use gallery\assets\slider\SliderAsset;
+use gallery\assets\album\AlbumAsset;
+use powerkernel\photoswipe\Modal;
 
 SliderAsset::register($this);
 AlbumAsset::register($this);
@@ -57,23 +58,18 @@ AlbumAsset::register($this);
                                             }
                                             ?>
                                             <?=
-                                            \powerkernel\photoswipe\Modal::widget([
+                                            Modal::widget([
                                                 'selector' => '.modaled',
                                                 'images' => $photos,
                                             ])
                                             ?>
-                                            
                                         </div>
-
                                         <div class="dept_slider_nav"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
                                     </div>
-                                        
                                 </div>
                             </div>
                         </div>
                     </div>
-
 			</div>
 		</div>
 	</div>

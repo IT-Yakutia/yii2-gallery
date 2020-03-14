@@ -1,12 +1,12 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model gallery\models\GalleryVideo */
+/* @var $model gallery\models\GalleryAlbum */
 
-$this->title = 'Новое видео';
+$this->title = 'Новая фотогалерея';
 ?>
-<div class="gallery-video-create">
-	<div class="row">
+<div class="gallery-album-create">
+    <div class="row">
         <div class="col s12">
 		    <?= $this->render('_form', [
 		        'model' => $model,

@@ -1,16 +1,18 @@
 <?php
 
+use yii\widgets\LinkPager;
+use yii\grid\SerialColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\modules\gallery\models\GalleryAlboomSearch */
+/* @var $searchModel gallery\models\GalleryAlbumSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Фотоальбомы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="gallery-alboom-index">
+<div class="gallery-album-index">
     <div class="row">
         <div class="col s12">
             <p>
@@ -32,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
                 'columns' => [
-                    ['class' => 'yii\grid\SerialColumn'],
+                    ['class' => SerialColumn::class],
                     ['class' => 'backend\components\grid\MaterialActionColumn', 'template' => '{update} {delete}'],
                     [
                         'header' => 'Фото',
@@ -62,7 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ],
                 'pager' => [
-                    'class' => 'yii\widgets\LinkPager',
+                    'class' => LinkPager::class,
                     'options' => ['class' => 'pagination center'],
                     'prevPageCssClass' => '',
                     'nextPageCssClass' => '',

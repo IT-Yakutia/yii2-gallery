@@ -1,18 +1,16 @@
 <?php
 
-namespace uraankhayayaal\gallery\models;
 
-use Yii;
+namespace gallery\models;
+
+
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use uraankhayayaal\gallery\models\GalleryAlboom;
 
-/**
- * GalleryAlboomSearch represents the model behind the search form of `uraankhayayaal\gallery\models\GalleryAlboom`.
- */
-class GalleryAlboomSearch extends GalleryAlboom
+
+class GalleryAlbumSearch extends GalleryAlbum
 {
-    public function rules()
+    public function rules(): array
     {
         return [
             [['id', 'is_publish', 'status', 'created_at', 'updated_at'], 'integer'],
@@ -20,7 +18,7 @@ class GalleryAlboomSearch extends GalleryAlboom
         ];
     }
 
-    public function scenarios()
+    public function scenarios(): array
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
@@ -28,7 +26,7 @@ class GalleryAlboomSearch extends GalleryAlboom
 
     public function search($params)
     {
-        $query = GalleryAlboom::find();
+        $query = GalleryAlbum::find();
 
         // add conditions that should always apply here
 
@@ -60,9 +58,9 @@ class GalleryAlboomSearch extends GalleryAlboom
         return $dataProvider;
     }
 
-    public function searchFront($params)
+    public function searchFront($params): ActiveDataProvider
     {
-        $query = GalleryAlboom::find();
+        $query = GalleryAlbum::find();
 
         // add conditions that should always apply here
 

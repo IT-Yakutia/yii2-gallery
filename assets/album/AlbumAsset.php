@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\assets;
+
+namespace gallery\assets\album;
+
 
 use yii\web\AssetBundle;
 
-/**
- * Main frontend application asset bundle.
- */
+
 class AlbumAsset extends AssetBundle
 {
-    public $sourcePath = '@uraankhayayaal/gallery/assets/album/src/';
+    public $sourcePath = '@gallery/assets/album/src/';
 
     public $css = [
         'css/progressive-image.min.css',

@@ -1,27 +1,27 @@
 <?php
 
-namespace uraankhayayaal\gallery\controllers;
+
+namespace gallery\controllers;
+
 
 use Yii;
-use uraankhayayaal\gallery\models\GalleryAlboom;
-use uraankhayayaal\gallery\models\GalleryAlboomSearch;
+use gallery\models\GalleryAlbum;
+use gallery\models\GalleryAlbumSearch;
+use yii\db\StaleObjectException;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use uraankhayayaal\materializecomponents\imgcropper\actions\UploadAction;
 
-/**
- * BackAlboomController implements the CRUD actions for GalleryAlboom model.
- */
-class BackAlboomController extends Controller
+
+class BackAlbumController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
+    public function behaviors(): array 
     {
         return [
             'access' => [
-                'class' => \yii\filters\AccessControl::className(),
+                'class' => AccessControl::class,
                 'rules' => [
                     [
                         'allow' => true,
@@ -30,7 +30,7 @@ class BackAlboomController extends Controller
                 ],
             ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -38,25 +38,25 @@ class BackAlboomController extends Controller
         ];
     }
 
-    public function actions()
+    public function actions(): array
     {
         return [
             'uploadImg' => [
-                'class' => 'backend\widgets\imgcropper\actions\UploadAction',
-                'url' => '/images/uploads/photoalboom/',
-                'path' => '@frontend/web/images/uploads/photoalboom/',
+                'class' => UploadAction::class,
+                'url' => '/images/uploads/photoAlbum/',
+                'path' => '@frontend/web/images/uploads/photoAlbum/',
                 'maxSize' => 10485760,
             ]
         ];
     }
 
     /**
-     * Lists all GalleryAlboom models.
+     * Lists all GalleryAlbum models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new GalleryAlboomSearch();
+        $searchModel = new GalleryAlbumSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -66,7 +66,7 @@ class BackAlboomController extends Controller
     }
 
     /**
-     * Displays a single GalleryAlboom model.
+     * Displays a single GalleryAlbum model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -79,15 +79,17 @@ class BackAlboomController extends Controller
     }
 
     /**
-     * Creates a new GalleryAlboom model.
+     * Creates a new GalleryAlbum model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new GalleryAlboom();
+        $model = new GalleryAlbum();
+        $post = Yii::$app->request->post();
+        $load = $model->load($post);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if($load && $model->save()) {
             Yii::$app->session->setFlash('success', 'Запись успешно создана!');
             return $this->redirect(['index']);
         }
@@ -98,7 +100,7 @@ class BackAlboomController extends Controller
     }
 
     /**
-     * Updates an existing GalleryAlboom model.
+     * Updates an existing GalleryAlbum model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -107,8 +109,10 @@ class BackAlboomController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $post = Yii::$app->request->post();
+        $load = $model->load($post);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if($load && $model->save()) {
             Yii::$app->session->setFlash('success', 'Запись успешно изменена!');
             return $this->redirect(['index']);
         }
@@ -119,11 +123,13 @@ class BackAlboomController extends Controller
     }
 
     /**
-     * Deletes an existing GalleryAlboom model.
+     * Deletes an existing GalleryAlbum model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -134,15 +140,15 @@ class BackAlboomController extends Controller
     }
 
     /**
-     * Finds the GalleryAlboom model based on its primary key value.
+     * Finds the GalleryAlbum model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return GalleryAlboom the loaded model
+     * @return GalleryAlbum the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($id): GalleryAlbum
     {
-        if (($model = GalleryAlboom::findOne($id)) !== null) {
+        if (($model = GalleryAlbum::findOne($id)) !== null) {
             return $model;
         }
 

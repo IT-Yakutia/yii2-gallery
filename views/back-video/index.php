@@ -1,10 +1,12 @@
 <?php
 
+use yii\widgets\LinkPager;
+use yii\grid\SerialColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\modules\gallery\models\GalleryVideoSearch */
+/* @var $searchModel gallery\models\GalleryVideoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Видеогалерея';
@@ -20,8 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::a('<i class="material-icons">add</i>', ['create'], [
                     'class' => 'btn-floating btn-large waves-effect waves-light tooltipped',
                     'title' => 'Сохранить',
-                    'data-position' => "left",
-                    'data-tooltip' => "Добавить",
+                    'data-position' => 'left',
+                    'data-tooltip' => 'Добавить',
                 ]) ?>
             </div>
 
@@ -48,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
                 'columns' => [
-                    ['class' => 'yii\grid\SerialColumn'],
+                    ['class' => SerialColumn::class],
                     ['class' => 'backend\components\grid\MaterialActionColumn', 'template' => '{update} {delete}'],
 
                     [
@@ -79,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ],
                 'pager' => [
-                    'class' => 'yii\widgets\LinkPager',
+                    'class' => LinkPager::class,
                     'options' => ['class' => 'pagination center'],
                     'prevPageCssClass' => '',
                     'nextPageCssClass' => '',

@@ -1,21 +1,23 @@
 <?php
 
-namespace uraankhayayaal\gallery\models;
+namespace gallery\models;
 
-use Yii;
+
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
-class GalleryVideo extends \yii\db\ActiveRecord
+
+class GalleryVideo extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'gallery_video';
     }
 
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
         ];
     }
 
@@ -29,7 +31,7 @@ class GalleryVideo extends \yii\db\ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',

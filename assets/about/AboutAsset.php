@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaal\gallery\assets\about;
+namespace gallery\assets\about;
 
 use yii\web\AssetBundle;
 
@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class AboutAsset extends AssetBundle
 {
-    public $sourcePath = '@uraankhayayaal/gallery/assets/about/src/';
+    public $sourcePath = '@gallery/assets/about/src/';
     
     public $css = [
         'css/about.css',

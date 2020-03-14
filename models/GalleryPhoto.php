@@ -1,25 +1,28 @@
 <?php
 
-namespace uraankhayayaal\gallery\models;
+namespace gallery\models;
 
-use Yii;
+
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
-class GalleryPhoto extends \yii\db\ActiveRecord
+
+class GalleryPhoto extends ActiveRecord
 {
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'gallery_photo';
     }
 
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
         ];
     }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['src'], 'required'],
@@ -29,7 +32,7 @@ class GalleryPhoto extends \yii\db\ActiveRecord
         ];
     }
 
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',
@@ -46,8 +49,8 @@ class GalleryPhoto extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getGalleryAlboomPhotos()
+    public function getGalleryAlbumPhotos(): ActiveQuery
     {
-        return $this->hasMany(GalleryAlboomPhoto::className(), ['photo_id' => 'id']);
+        return $this->hasMany(GalleryAlbumPhoto::class, ['photo_id' => 'id']);
     }
 }

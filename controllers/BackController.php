@@ -1,25 +1,21 @@
 <?php
 
-namespace uraankhayayaal\gallery\controllers;
+namespace gallery\controllers;
 
-use Yii;
+
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use gallery\models\GalleryPhoto;
 
-/**
- * Default controller for the `gallery` module
- */
+
 class BackController extends Controller
 {
-
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
-                'class' => \yii\filters\AccessControl::className(),
+                'class' => AccessControl::class,
                 'rules' => [
                     [
                         'allow' => true,
@@ -28,7 +24,7 @@ class BackController extends Controller
                 ],
             ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -40,15 +36,15 @@ class BackController extends Controller
     {
         return [
             'upload' => [
-                'class' => 'uraankhayayaal\gallery\widgets\imgUploader\actions\UploadAction',
+                'class' => 'gallery\widgets\imgUploader\actions\UploadAction',
             ],
             'delete-photo' => [
-                'class' => 'uraankhayayaal\gallery\widgets\imgUploader\actions\DeleteAction',
-                'model_class' => '\uraankhayayaal\gallery\models\GalleryPhoto',
+                'class' => 'gallery\widgets\imgUploader\actions\DeleteAction',
+                'model_class' => GalleryPhoto::class,
             ],
             'edit-caption' => [
-                'class' => 'uraankhayayaal\gallery\widgets\imgUploader\actions\EditAction',
-                'model_class' => '\uraankhayayaal\gallery\models\GalleryPhoto',
+                'class' => 'gallery\widgets\imgUploader\actions\EditAction',
+                'model_class' => GalleryPhoto::class,
             ],
             'uploadImg' => [
                 'class' => 'backend\widgets\imgcropper\actions\UploadAction',

@@ -1,27 +1,26 @@
 <?php
 
-namespace uraankhayayaal\gallery\controllers;
+
+namespace gallery\controllers;
+
 
 use Yii;
-use uraankhayayaal\gallery\models\GalleryVideo;
-use uraankhayayaal\gallery\models\GalleryVideoSearch;
+use gallery\models\GalleryVideo;
+use gallery\models\GalleryVideoSearch;
+use yii\db\StaleObjectException;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * BackVideoController implements the CRUD actions for GalleryVideo model.
- */
+
 class BackVideoController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
-                'class' => \yii\filters\AccessControl::className(),
+                'class' => AccessControl::class,
                 'rules' => [
                     [
                         'allow' => true,
@@ -30,7 +29,7 @@ class BackVideoController extends Controller
                 ],
             ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -74,15 +73,7 @@ class BackVideoController extends Controller
     public function actionCreate()
     {
         $model = new GalleryVideo();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Запись успешно создана!');
-            return $this->redirect(['index']);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->saveModel($model, 'create', 'Запись успешно создана!');
     }
 
     /**
@@ -95,13 +86,20 @@ class BackVideoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        return $this->saveModel($model, 'update', 'Запись успешно изменена!');
+    }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Запись успешно изменена!');
+    private function saveModel($model, $view, $message)
+    {
+        $post = Yii::$app->request->post();
+        $load = $model->load($post);
+
+        if ($load && $model->save()) {
+            Yii::$app->session->setFlash('success', $message);
             return $this->redirect(['index']);
         }
 
-        return $this->render('update', [
+        return $this->render($view, [
             'model' => $model,
         ]);
     }
@@ -112,6 +110,8 @@ class BackVideoController extends Controller
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -128,7 +128,7 @@ class BackVideoController extends Controller
      * @return GalleryVideo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($id): GalleryVideo
     {
         if (($model = GalleryVideo::findOne($id)) !== null) {
             return $model;

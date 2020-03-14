@@ -2,14 +2,11 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
-use yii\helpers\Url;
-use uraankhayayaal\gallery\assets\about\AboutAsset;
+use gallery\assets\about\AboutAsset;
 use yii\widgets\ListView;
 
 AboutAsset::register($this);
 $this->title = "Фотогалереи";
-// $this->params['breadcrumbs'][] = $this->title;
 ?>	
 
 	<div class="doctors">
@@ -17,7 +14,6 @@ $this->title = "Фотогалереи";
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title">Фото и видео галерея</div>
-					<!-- <div class="section_subtitle">Фотографии</div> -->
 				</div>
 			</div>
 			<div class="row doctors_row">

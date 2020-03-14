@@ -1,12 +1,15 @@
 <?php
 
-namespace uraankhayayaal\gallery\assets\slider;
+
+namespace gallery\assets\slider;
+
 
 use yii\web\AssetBundle;
 
+
 class SliderAsset extends AssetBundle
 {
-    public $sourcePath = '@uraankhayayaal/gallery/assets/album/src/';
+    public $sourcePath = '@gallery/assets/album/src/';
 
     public $js = [
         'owl.carousel.js',

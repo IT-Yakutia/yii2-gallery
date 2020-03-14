@@ -1,10 +1,11 @@
 <?php
 
+use uraankhayayaal\materializecomponents\checkbox\WCheckbox;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\gallery\models\GalleryVideo */
+/* @var $model gallery\models\GalleryVideo */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -14,7 +15,7 @@ use yii\widgets\ActiveForm;
             'errorCssClass' => 'red-text',
         ]); ?>
 
-    <?= \backend\widgets\checkbox\WCheckbox::widget(['model' => $model, 'attribute' => 'is_publish']); ?>
+    <?= WCheckbox::widget(['model' => $model, 'attribute' => 'is_publish']); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
@@ -29,8 +30,8 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton('<i class="material-icons">save</i>', [
             'class' => 'btn-floating btn-large waves-effect waves-light tooltipped',
             'title' => 'Сохранить',
-            'data-position' => "left",
-            'data-tooltip' => "Сохранить",
+            'data-position' => 'left',
+            'data-tooltip' => 'Сохранить',
         ]) ?>
     </div>
 

@@ -1,19 +1,16 @@
 <?php
 
-namespace uraankhayayaal\gallery\controllers;
+namespace gallery\controllers;
 
 use Yii;
-use uraankhayayaal\gallery\models\GalleryAlboom;
-use uraankhayayaal\gallery\models\GalleryAlboomSearch;
-use uraankhayayaal\gallery\models\GalleryAlboomPhoto;
-use uraankhayayaal\gallery\models\GalleryVideo;
-use uraankhayayaal\gallery\models\GalleryVideoSearch;
-// use yii\filters\VerbFilter;
-// use yii\filters\AccessControl;
+use gallery\models\GalleryAlbum;
+use gallery\models\GalleryAlbumSearch;
+use gallery\models\GalleryAlbumPhoto;
+use gallery\models\GalleryVideo;
+use gallery\models\GalleryVideoSearch;
+use yii\web\NotFoundHttpException;
 
-/**
- * Back controller
- */
+
 class FrontController extends \frontend\components\Controller
 {
     public function beforeAction($action)
@@ -24,7 +21,7 @@ class FrontController extends \frontend\components\Controller
 
     public function actionIndex($filter_category_id = null)
     {
-        $searchModel = new GalleryAlboomSearch();
+        $searchModel = new GalleryAlbumSearch();
         $dataProvider = $searchModel->searchFront(Yii::$app->request->queryParams);
 
         $videos = GalleryVideo::find()->where(['is_publish' => true])->orderBy(['created_at' => SORT_DESC])->all();
@@ -45,9 +42,10 @@ class FrontController extends \frontend\components\Controller
     	]);
     }
 
+
     protected function findModel($id)
     {
-        if (($model = GalleryAlboom::findOne($id)) !== null) {
+        if (($model = GalleryAlbum::findOne($id)) !== null) {
             return $model;
         }
 
