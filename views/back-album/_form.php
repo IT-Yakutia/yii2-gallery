@@ -1,7 +1,7 @@
 <?php
 
 use gallery\models\GalleryAlbumPhoto;
-use uraankhayayaal\gallery\widgets\imgUploader\WGalleryImgUploader;
+use gallery\widgets\imgUploader\WGalleryImgUploader;
 use uraankhayayaal\materializecomponents\checkbox\WCheckbox;
 use uraankhayayaal\materializecomponents\imgcropper\Cropper;
 use yii\helpers\Html;

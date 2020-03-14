@@ -1,8 +1,8 @@
 <?php
-namespace uraankhayayaal\gallery\widgets\imgUploader;
+namespace gallery\widgets\imgUploader;
 
 use yii\base\Model;
-use uraankhayayaal\gallery\widgets\imgUploader\forms\GalleryPhoto;
+use gallery\widgets\imgUploader\forms\GalleryPhoto;
 
 class WGalleryImgUploader extends \yii\base\Widget
 {

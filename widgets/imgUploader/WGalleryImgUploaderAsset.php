@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaal\gallery\widgets\imgUploader;
+namespace gallery\widgets\imgUploader;
 
 use yii\web\AssetBundle;
 

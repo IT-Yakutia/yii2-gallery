@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaalgallery\widgets\imgUploader\actions;
+namespace gallery\widgets\imgUploader\actions;
 
 use yii\base\Action;
 use yii\web\BadRequestHttpException;
@@ -23,14 +23,14 @@ class UploadAction extends Action
     public function run()
     {
         if (Yii::$app->request->isPost) {
-            $model = new \uraankhayayaal\gallery\widgets\imgUploader\forms\GalleryPhoto();
+            $model = new gallery\widgets\imgUploader\forms\GalleryPhoto();
             $photoalbum = null;
 
             $model->files = UploadedFile::getInstances($model, 'files');
             $model->subject_id = Yii::$app->request->post('GalleryPhoto')['subject_id'];
             $model->subject_name = Yii::$app->request->post('GalleryPhoto')['subject_name'];
 
-            $className = '\uraankhayayaal\gallery\models\\'.$model->subject_name;
+            $className = 'gallery\models\\'.$model->subject_name;
             $galleryClass = $className::RELATION_NAME;
             $galleryAttribute = $className::RELATION_ATTRIBUTE;
             $galleryforModelName = $className::FOR_MODEL_NAME;
@@ -38,7 +38,7 @@ class UploadAction extends Action
 
             if($model->upload()){
                 $photoalbum = $galleryforModelName::findOne($model->subject_id);
-                $model = new \uraankhayayaal\gallery\widgets\imgUploader\forms\GalleryPhoto();
+                $model = new gallery\widgets\imgUploader\forms\GalleryPhoto();
                 $model->subject_id = $photoalbum->id;
             }
 

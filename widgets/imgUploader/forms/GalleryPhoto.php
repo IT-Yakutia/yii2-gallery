@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaal\gallery\widgets\imgUploader\forms;
+namespace gallery\widgets\imgUploader\forms;
 
 use Yii;
 use yii\imagine\Image;

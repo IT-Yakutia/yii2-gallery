@@ -1,9 +1,9 @@
 <?php
 
-namespace uraankhayayaal\gallery\widgets\slider;
+namespace gallery\widgets\slider;
 
 use yii\base\Model;
-use uraankhayayaal\gallery\assets\SliderAsset;
+use gallery\assets\SliderAsset;
 
 class WSlider extends \yii\base\Widget
 {

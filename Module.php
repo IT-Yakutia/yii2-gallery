@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaal\gallery;
+namespace gallery;
 
 /**
  * gallery module definition class
@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'uraankhayayaal\gallery\controllers';
+    public $controllerNamespace = 'gallery\controllers';
     public $defaultRoute = 'front';
 
     /**

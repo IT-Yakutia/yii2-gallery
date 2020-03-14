@@ -1,6 +1,6 @@
 <?php
 
-namespace uraankhayayaal\gallery\widgets\imgUploader\actions;
+namespace gallery\widgets\imgUploader\actions;
 
 use yii\base\Action;
 use yii\web\BadRequestHttpException;
