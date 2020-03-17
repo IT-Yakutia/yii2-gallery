@@ -1,13 +1,11 @@
 <?php
 
-namespace gallery\controllers;
+namespace ityakutia\gallery\controllers;
 
 use Yii;
-use gallery\models\GalleryAlbum;
-use gallery\models\GalleryAlbumSearch;
-use gallery\models\GalleryAlbumPhoto;
-use gallery\models\GalleryVideo;
-use gallery\models\GalleryVideoSearch;
+use ityakutia\gallery\models\GalleryAlbum;
+use ityakutia\gallery\models\GalleryAlbumSearch;
+use ityakutia\gallery\models\GalleryVideo;
 use yii\web\NotFoundHttpException;
 
 

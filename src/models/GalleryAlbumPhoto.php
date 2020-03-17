@@ -1,6 +1,6 @@
 <?php
 
-namespace gallery\models;
+namespace ityakutia\gallery\models;
 
 
 use yii\db\ActiveQuery;

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace gallery\models;
+namespace ityakutia\gallery\models;
 
 
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use blog\models\Article;
+use ityakutia\blog\models\Article;
 
 /**
  * This is the model class for table "gallery_article".

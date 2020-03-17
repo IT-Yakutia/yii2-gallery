@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel gallery\models\GalleryVideoSearch */
+/* @var $searchModel ityakutia\gallery\models\GalleryVideoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Видеогалерея';

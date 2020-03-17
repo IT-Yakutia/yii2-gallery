@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model gallery\models\GalleryVideo */
+/* @var $model ityakutia\gallery\models\GalleryVideo */
 
 $this->title = 'Новое видео';
 ?>

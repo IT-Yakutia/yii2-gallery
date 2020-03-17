@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model gallery\models\GalleryVideo */
+/* @var $model ityakutia\gallery\models\GalleryVideo */
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Gallery Videos', 'url' => ['index']];

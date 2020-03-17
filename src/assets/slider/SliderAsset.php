@@ -1,7 +1,7 @@
 <?php
 
 
-namespace gallery\assets\slider;
+namespace ityakutia\gallery\assets\slider;
 
 
 use yii\web\AssetBundle;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace gallery\assets\album;
+namespace ityakutia\gallery\assets\album;
 
 
 use yii\web\AssetBundle;

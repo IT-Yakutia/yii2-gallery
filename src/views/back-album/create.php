@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model gallery\models\GalleryAlbum */
+/* @var $model ityakutia\gallery\models\GalleryAlbum */
 
 $this->title = 'Новая фотогалерея';
 ?>

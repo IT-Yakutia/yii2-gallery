@@ -1,12 +1,12 @@
 <?php
 
-namespace gallery\controllers;
+namespace ityakutia\gallery\controllers;
 
 
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use gallery\models\GalleryPhoto;
+use ityakutia\gallery\models\GalleryPhoto;
 
 
 class BackController extends Controller

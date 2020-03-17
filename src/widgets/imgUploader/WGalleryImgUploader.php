@@ -1,10 +1,14 @@
 <?php
-namespace gallery\widgets\imgUploader;
 
-use yii\base\Model;
-use gallery\widgets\imgUploader\forms\GalleryPhoto;
 
-class WGalleryImgUploader extends \yii\base\Widget
+namespace ityakutia\gallery\widgets\imgUploader;
+
+
+use ityakutia\gallery\widgets\imgUploader\forms\GalleryPhoto;
+use yii\base\Widget;
+use yii\helpers\StringHelper;
+
+class WGalleryImgUploader extends Widget
 {
     public $model;
     public $galleryClass;
@@ -23,7 +27,7 @@ class WGalleryImgUploader extends \yii\base\Widget
 
         $model = new GalleryPhoto();
         $model->subject_id = $this->model->id;
-        $model->subject_name = \yii\helpers\StringHelper::basename($this->galleryClass);
+        $model->subject_name = StringHelper::basename($this->galleryClass);
         $model->subject_attribute = $className::RELATION_ATTRIBUTE;
            
         return $this->render('index', [

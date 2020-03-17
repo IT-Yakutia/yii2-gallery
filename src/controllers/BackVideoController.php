@@ -1,12 +1,12 @@
 <?php
 
 
-namespace gallery\controllers;
+namespace ityakutia\gallery\controllers;
 
 
 use Yii;
-use gallery\models\GalleryVideo;
-use gallery\models\GalleryVideoSearch;
+use ityakutia\gallery\models\GalleryVideo;
+use ityakutia\gallery\models\GalleryVideoSearch;
 use yii\db\StaleObjectException;
 use yii\filters\AccessControl;
 use yii\web\Controller;

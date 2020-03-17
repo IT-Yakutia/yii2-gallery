@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use gallery\assets\about\AboutAsset;
+use ityakutia\gallery\assets\about\AboutAsset;
 use yii\widgets\ListView;
 
 AboutAsset::register($this);

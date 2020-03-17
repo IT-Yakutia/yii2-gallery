@@ -1,7 +1,7 @@
 <?php
 
-use gallery\assets\slider\SliderAsset;
-use gallery\assets\album\AlbumAsset;
+use ityakutia\gallery\assets\slider\SliderAsset;
+use ityakutia\gallery\assets\album\AlbumAsset;
 use powerkernel\photoswipe\Modal;
 
 SliderAsset::register($this);

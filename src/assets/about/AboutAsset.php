@@ -1,6 +1,6 @@
 <?php
 
-namespace gallery\assets\about;
+namespace ityakutia\gallery\assets\about;
 
 use yii\web\AssetBundle;
 

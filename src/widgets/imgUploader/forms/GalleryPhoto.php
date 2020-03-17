@@ -1,6 +1,6 @@
 <?php
 
-namespace gallery\widgets\imgUploader\forms;
+namespace ityakutia\gallery\widgets\imgUploader\forms;
 
 use Yii;
 use yii\imagine\Image;

@@ -1,10 +1,9 @@
 <?php
 
-namespace gallery\widgets\imgUploader\actions;
+namespace ityakutia\gallery\widgets\imgUploader\actions;
 
 use yii\base\Action;
 use yii\web\BadRequestHttpException;
-use yii\web\ServerErrorHttpException;
 use Yii;
 
 class EditAction extends Action

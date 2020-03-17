@@ -1,6 +1,6 @@
 <?php
 
-namespace gallery\widgets\imgUploader;
+namespace ityakutia\gallery\widgets\imgUploader;
 
 use yii\web\AssetBundle;
 
@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class WGalleryImgUploaderAsset extends AssetBundle
 {
-    public $sourcePath = '@uraankhayayaal/gallery/widgets/imgUploader/src/';
+    public $sourcePath = '@ityakutia/gallery/widgets/imgUploader/src/';
 
     public $css = [
         'progressive-image.css'
