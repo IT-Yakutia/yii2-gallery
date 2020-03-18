@@ -10,7 +10,7 @@ use yii\data\ActiveDataProvider;
 
 class GalleryAlbumSearch extends GalleryAlbum
 {
-    public function rules(): array
+    public function rules()
     {
         return [
             [['id', 'is_publish', 'status', 'created_at', 'updated_at'], 'integer'],
@@ -18,7 +18,7 @@ class GalleryAlbumSearch extends GalleryAlbum
         ];
     }
 
-    public function scenarios(): array
+    public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
@@ -58,7 +58,7 @@ class GalleryAlbumSearch extends GalleryAlbum
         return $dataProvider;
     }
 
-    public function searchFront($params): ActiveDataProvider
+    public function searchFront($params)
     {
         $query = GalleryAlbum::find();
 

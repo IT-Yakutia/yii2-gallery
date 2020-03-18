@@ -57,7 +57,7 @@ class GalleryArticle extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getArticle(): ActiveQuery
+    public function getArticle()
     {
         return $this->hasOne(Article::class, ['id' => 'article_id']);
     }
@@ -65,7 +65,7 @@ class GalleryArticle extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getPhoto(): ActiveQuery
+    public function getPhoto()
     {
         return $this->hasOne(GalleryPhoto::class, ['id' => 'photo_id']);
     }

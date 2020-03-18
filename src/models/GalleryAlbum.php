@@ -10,7 +10,7 @@ use yii\db\ActiveRecord;
 
 class GalleryAlbum extends ActiveRecord
 {
-    public static function tableName(): string 
+    public static function tableName()
     {
         return 'gallery_Album';
     }
@@ -22,7 +22,7 @@ class GalleryAlbum extends ActiveRecord
         ];
     }
 
-    public function rules(): array 
+    public function rules()
     {
         return [
             [['title'], 'required'],
@@ -32,7 +32,7 @@ class GalleryAlbum extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array 
+    public function attributeLabels()
     {
         return [
             'id' => 'ID',
@@ -46,7 +46,7 @@ class GalleryAlbum extends ActiveRecord
         ];
     }
     
-    public function getGalleryAlbumPhotos(): ActiveQuery
+    public function getGalleryAlbumPhotos()
     {
         return $this->hasMany(GalleryAlbumPhoto::class, ['Album_id' => 'id']);
     }

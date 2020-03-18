@@ -10,6 +10,6 @@ class Bootstrap implements BootstrapInterface
 {
     public function bootstrap($app): void
     {
-        $app->setModule('blog', 'ityakutia\gallery\Module');
+        $app->setModule('gallery', 'ityakutia\gallery\Module');
     }
 }

@@ -17,7 +17,7 @@ use uraankhayayaal\materializecomponents\imgcropper\actions\UploadAction;
 
 class BackAlbumController extends Controller
 {
-    public function behaviors(): array 
+    public function behaviors()
     {
         return [
             'access' => [
@@ -38,7 +38,7 @@ class BackAlbumController extends Controller
         ];
     }
 
-    public function actions(): array
+    public function actions()
     {
         return [
             'uploadImg' => [
@@ -146,7 +146,7 @@ class BackAlbumController extends Controller
      * @return GalleryAlbum the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id): GalleryAlbum
+    protected function findModel($id)
     {
         if (($model = GalleryAlbum::findOne($id)) !== null) {
             return $model;

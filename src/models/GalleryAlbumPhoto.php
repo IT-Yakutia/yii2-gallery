@@ -37,12 +37,12 @@ class GalleryAlbumPhoto extends ActiveRecord
         ];
     }
 
-    public function getAlbum(): ActiveQuery
+    public function getAlbum()
     {
         return $this->hasOne(GalleryAlbum::class, ['id' => 'album_id']);
     }
 
-    public function getPhoto(): ActiveQuery
+    public function getPhoto()
     {
         return $this->hasOne(GalleryPhoto::class, ['id' => 'photo_id']);
     }

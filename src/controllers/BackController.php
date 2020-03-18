@@ -11,7 +11,7 @@ use ityakutia\gallery\models\GalleryPhoto;
 
 class BackController extends Controller
 {
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
             'access' => [

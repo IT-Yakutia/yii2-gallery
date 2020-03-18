@@ -10,7 +10,7 @@ use yii\data\ActiveDataProvider;
 
 class GalleryVideoSearch extends GalleryVideo
 {
-    public function rules(): array
+    public function rules()
     {
         return [
             [['id', 'is_publish', 'status', 'created_at', 'updated_at'], 'integer'],
@@ -18,13 +18,13 @@ class GalleryVideoSearch extends GalleryVideo
         ];
     }
 
-    public function scenarios(): array
+    public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    public function search($params): ActiveDataProvider
+    public function search($params)
     {
         $query = GalleryVideo::find();
 

@@ -16,7 +16,7 @@ use yii\filters\VerbFilter;
 
 class BackVideoController extends Controller
 {
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
             'access' => [
@@ -128,7 +128,7 @@ class BackVideoController extends Controller
      * @return GalleryVideo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id): GalleryVideo
+    protected function findModel($id)
     {
         if (($model = GalleryVideo::findOne($id)) !== null) {
             return $model;

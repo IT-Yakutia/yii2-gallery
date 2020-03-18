@@ -9,12 +9,12 @@ use yii\db\ActiveRecord;
 
 class GalleryVideo extends ActiveRecord
 {
-    public static function tableName(): string
+    public static function tableName()
     {
         return 'gallery_video';
     }
 
-    public function behaviors(): array
+    public function behaviors()
     {
         return [
             TimestampBehavior::class,
@@ -31,7 +31,7 @@ class GalleryVideo extends ActiveRecord
         ];
     }
 
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'id' => 'ID',
