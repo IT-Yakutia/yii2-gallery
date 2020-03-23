@@ -12,7 +12,7 @@ class GalleryAlbum extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'gallery_Album';
+        return 'gallery_album';
     }
 
     public function behaviors()

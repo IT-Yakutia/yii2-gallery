@@ -4,6 +4,7 @@ use yii\widgets\LinkPager;
 use yii\grid\SerialColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use uraankhayayaal\materializecomponents\grid\MaterialActionColumn;
 
 /* @var $this yii\web\View */
 /* @var $searchModel ityakutia\gallery\models\GalleryAlbumSearch */
@@ -35,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => SerialColumn::class],
-                    ['class' => 'backend\components\grid\MaterialActionColumn', 'template' => '{update} {delete}'],
+                    ['class' => MaterialActionColumn::class, 'template' => '{update} {delete}'],
                     [
                         'header' => 'Фото',
                         'format' => 'raw',

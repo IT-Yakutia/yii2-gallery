@@ -15,7 +15,7 @@ class m181118_132930_gallery_add_album extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('gallery_alboom', [
+        $this->createTable('gallery_album', [
             'id' => $this->primaryKey(),
             'title' => $this->string()->notNull(),
             'description' => $this->text(),
@@ -27,29 +27,29 @@ class m181118_132930_gallery_add_album extends Migration
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->createTable('gallery_alboom_photo', [
+        $this->createTable('gallery_album_photo', [
             'id' => $this->primaryKey(),
-            'alboom_id' => $this->integer()->notNull(),
+            'album_id' => $this->integer()->notNull(),
             'photo_id' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->addForeignKey('gallery_alboom_photo-gallery_photo-fkey','gallery_alboom_photo','photo_id','gallery_photo','id','CASCADE','CASCADE');
-        $this->createIndex('gallery_alboom_photo-gallery_photo-idx','gallery_alboom_photo','photo_id');
+        $this->addForeignKey('gallery_album_photo-gallery_photo-fkey','gallery_album_photo','photo_id','gallery_photo','id','CASCADE','CASCADE');
+        $this->createIndex('gallery_album_photo-gallery_photo-idx','gallery_album_photo','photo_id');
 
-        $this->addForeignKey('gallery_alboom_photo-gallery_alboom-fkey','gallery_alboom_photo','alboom_id','gallery_alboom','id','CASCADE','CASCADE');
-        $this->createIndex('gallery_alboom_photo-gallery_alboom-idx','gallery_alboom_photo','alboom_id');
+        $this->addForeignKey('gallery_album_photo-gallery_album-fkey','gallery_album_photo','album_id','gallery_album','id','CASCADE','CASCADE');
+        $this->createIndex('gallery_album_photo-gallery_album-idx','gallery_album_photo','album_id');
     }
 
     public function safeDown()
     {
-        $this->dropForeignKey('gallery_alboom_photo-gallery_alboom-fkey','gallery_alboom_photo');
-        $this->dropIndex('gallery_alboom_photo-gallery_alboom-idx','gallery_alboom_photo');
+        $this->dropForeignKey('gallery_album_photo-gallery_album-fkey','gallery_album_photo');
+        $this->dropIndex('gallery_album_photo-gallery_album-idx','gallery_album_photo');
 
-        $this->dropForeignKey('gallery_alboom_photo-gallery_photo-fkey','gallery_alboom_photo');
-        $this->dropIndex('gallery_alboom_photo-gallery_photo-idx','gallery_alboom_photo');
+        $this->dropForeignKey('gallery_album_photo-gallery_photo-fkey','gallery_album_photo');
+        $this->dropIndex('gallery_album_photo-gallery_photo-idx','gallery_album_photo');
 
-        $this->dropTable('gallery_alboom_photo');
+        $this->dropTable('gallery_album_photo');
 
-        $this->dropTable('gallery_alboom');
+        $this->dropTable('gallery_album');
     }
 }

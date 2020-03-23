@@ -4,9 +4,10 @@ namespace ityakutia\gallery\controllers;
 
 
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\web\Controller;
 use ityakutia\gallery\models\GalleryPhoto;
+use uraankhayayaal\materializecomponents\imgcropper\actions\UploadAction;
 
 
 class BackController extends Controller
@@ -47,7 +48,7 @@ class BackController extends Controller
                 'model_class' => GalleryPhoto::class,
             ],
             'uploadImg' => [
-                'class' => 'backend\widgets\imgcropper\actions\UploadAction',
+                'class' => UploadAction::class,
                 'url' => '/images/uploads/gallery/',
                 'path' => '@frontend/web/images/uploads/gallery/',
                 'maxSize' => 10485760,
