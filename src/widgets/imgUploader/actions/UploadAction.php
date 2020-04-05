@@ -6,6 +6,7 @@ use yii\base\Action;
 use yii\web\BadRequestHttpException;
 use yii\web\UploadedFile;
 use Yii;
+use ityakutia\gallery\widgets\imgUploader\forms\GalleryPhoto;
 
 class UploadAction extends Action
 {
@@ -23,14 +24,14 @@ class UploadAction extends Action
     public function run()
     {
         if (Yii::$app->request->isPost) {
-            $model = new gallery\widgets\imgUploader\forms\GalleryPhoto();
+            $model = new GalleryPhoto();
             $photoalbum = null;
 
             $model->files = UploadedFile::getInstances($model, 'files');
             $model->subject_id = Yii::$app->request->post('GalleryPhoto')['subject_id'];
             $model->subject_name = Yii::$app->request->post('GalleryPhoto')['subject_name'];
 
-            $className = 'gallery\models\\'.$model->subject_name;
+            $className = 'ityakutia\gallery\models\\'.$model->subject_name;
             $galleryClass = $className::RELATION_NAME;
             $galleryAttribute = $className::RELATION_ATTRIBUTE;
             $galleryforModelName = $className::FOR_MODEL_NAME;
@@ -38,15 +39,19 @@ class UploadAction extends Action
 
             if($model->upload()){
                 $photoalbum = $galleryforModelName::findOne($model->subject_id);
-                $model = new gallery\widgets\imgUploader\forms\GalleryPhoto();
+                $model = new GalleryPhoto();
                 $model->subject_id = $photoalbum->id;
+
+                var_dump($model->files);die;
+
             }
 
-            return $this->controller->render('@uraankhayayaal/gallery/widgets/imgUploader/views/index', [
+            return $this->controller->render('@ityakutia/gallery/widgets/imgUploader/views/index', [
                 'model' => $model,
                 'modelRelationName' => $galleryClass,
                 'gallerySubject' => $photoalbum,
             ]);
+
         } else {
             throw new BadRequestHttpException(Yii::t('cropper', 'ONLY_POST_REQUEST'));
         }

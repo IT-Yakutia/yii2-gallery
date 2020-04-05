@@ -1,6 +1,7 @@
 <?php
 
 use yii\widgets\Pjax;
+use Yii;
 
 ?>
 
@@ -8,25 +9,25 @@ use yii\widgets\Pjax;
 
 	<?php Pjax::begin(['enablePushState' => false]); ?>
 
-	    <?= $this->render('_form', [
-	        'model' => $model,
-	    ]) ?>
+	<?= $this->render('_form', [
+		'model' => $model,
+	]) ?>
 
-		<style>
-			.gallery{
-				display: grid;
-			  	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-			  	grid-gap: 20px;
-			  	align-items: start;
-			}
-		</style>
-		<div class="gallery">
+	<style>
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-gap: 20px;
+			align-items: start;
+		}
+	</style>
+	<div class="gallery">
 		<?= $this->render('_list', [
-	        'model' => $gallerySubject,
-	        'modelRelationName' => $modelRelationName,
-	    ]) ?>
-	    </div>
+			'model' => $gallerySubject,
+			'modelRelationName' => $modelRelationName,
+		]) ?>
+	</div>
 
-    <?php Pjax::end(); ?>
+	<?php Pjax::end(); ?>
 
 </div>

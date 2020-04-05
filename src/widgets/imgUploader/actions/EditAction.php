@@ -5,6 +5,7 @@ namespace ityakutia\gallery\widgets\imgUploader\actions;
 use yii\base\Action;
 use yii\web\BadRequestHttpException;
 use Yii;
+use yii\web\Response;
 
 class EditAction extends Action
 {
@@ -38,7 +39,7 @@ class EditAction extends Action
         }
 
         if (Yii::$app->request->isAjax){
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            Yii::$app->response->format = Response::FORMAT_JSON;
             return ['success' => $success, 'toast' => $message];
         }
         else

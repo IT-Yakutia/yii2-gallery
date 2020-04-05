@@ -6,6 +6,7 @@ use yii\base\Action;
 use yii\web\BadRequestHttpException;
 use yii\web\ServerErrorHttpException;
 use Yii;
+use yii\web\Response;
 
 class DeleteAction extends Action
 {
@@ -38,7 +39,7 @@ class DeleteAction extends Action
         }
 
         if (Yii::$app->request->isAjax){
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            Yii::$app->response->format = Response::FORMAT_JSON;
             return ['success' =>true, 'toast' => $message];
         }
         else

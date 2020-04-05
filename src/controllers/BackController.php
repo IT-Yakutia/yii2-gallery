@@ -8,6 +8,9 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use ityakutia\gallery\models\GalleryPhoto;
 use uraankhayayaal\materializecomponents\imgcropper\actions\UploadAction;
+use ityakutia\gallery\widgets\imgUploader\actions\UploadAction as WidgetUploadAction;
+use ityakutia\gallery\widgets\imgUploader\actions\DeleteAction;
+use ityakutia\gallery\widgets\imgUploader\actions\EditAction;
 
 
 class BackController extends Controller
@@ -33,18 +36,25 @@ class BackController extends Controller
         ];
     }
 
+    public function rules()
+    {
+        return [
+            ['files', 'maxSize' => 1024 * 1024 * 2, 'tooLarge' => 'File has to be smaller than 2MB']
+        ];
+    }
+
 	public function actions()
     {
         return [
             'upload' => [
-                'class' => 'gallery\widgets\imgUploader\actions\UploadAction',
+                'class' => WidgetUploadAction::class,
             ],
             'delete-photo' => [
-                'class' => 'gallery\widgets\imgUploader\actions\DeleteAction',
+                'class' => DeleteAction::class,
                 'model_class' => GalleryPhoto::class,
             ],
             'edit-caption' => [
-                'class' => 'gallery\widgets\imgUploader\actions\EditAction',
+                'class' => EditAction::class,
                 'model_class' => GalleryPhoto::class,
             ],
             'uploadImg' => [

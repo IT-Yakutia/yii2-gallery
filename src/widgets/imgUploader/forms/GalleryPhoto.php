@@ -2,10 +2,11 @@
 
 namespace ityakutia\gallery\widgets\imgUploader\forms;
 
-use Yii;
+use ityakutia\gallery\models\GalleryPhoto as GalleryPhotoModel;
 use yii\imagine\Image;
+use yii\base\Model;
 
-class GalleryPhoto extends \yii\base\Model
+class GalleryPhoto extends Model
 {
     public $files;
     public $subject_name;
@@ -41,7 +42,7 @@ class GalleryPhoto extends \yii\base\Model
                     list($width, $height, $type, $attr) = getimagesize($path_original . $file->baseName . '.' . $file->extension);
                 	if(Image::thumbnail($path_original . $file->baseName . '.' . $file->extension, 20*$width/$height, 20)
     				->save($path. $file->baseName . '.' . $file->extension, ['quality' => 10])){
-                		$photo = new \common\modules\gallery\models\GalleryPhoto();
+                		$photo = new GalleryPhotoModel();
                         $photo->name = $file->baseName;
 	                	//$photo->subject_id = $this->subject_id;
                         $photo->src = '/images/uploads/gallery/'.$this->subject_name.'/'.$this->subject_id.'/'. $file->baseName . '.' . $file->extension;
@@ -49,7 +50,7 @@ class GalleryPhoto extends \yii\base\Model
                         $photo->w = intval($width);
                         $photo->h = intval($height);
 	                	if($photo->save()){
-                            $className = "\common\modules\gallery\models\\".$this->subject_name;
+                            $className = "\ityakutia\gallery\models\\".$this->subject_name;
                             $attributeName = $this->subject_attribute;
                             $gallery = new $className();
 	                		$gallery->$attributeName = $this->subject_id;

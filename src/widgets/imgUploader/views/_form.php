@@ -6,15 +6,14 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="GalleryPhoto-form">
-
     <?php $form = ActiveForm::begin([
         'action' => ['/gallery/back/upload', 'subject_id' => $model->subject_id],
         'options' => ['data-pjax' => true, 'enctype' => 'multipart/form-data'],
         'id' => 'galleryphoto-photo-form',
     ]); ?>
 
-    <?= $form->field($model, 'subject_id')->hiddenInput(['value'=> $model->subject_id])->label(false); ?>
-    <?= $form->field($model, 'subject_name')->hiddenInput(['value'=> $model->subject_name])->label(false); ?>
+    <?= $form->field($model, 'subject_id')->hiddenInput(['value' => $model->subject_id])->label(false); ?>
+    <?= $form->field($model, 'subject_name')->hiddenInput(['value' => $model->subject_name])->label(false); ?>
 
     <div class="file-field input-field">
         <div class="btn">
@@ -36,6 +35,7 @@ use yii\widgets\ActiveForm;
     <script type="text/javascript">
         var inputElement = document.getElementById("galleryphoto-files");
         inputElement.addEventListener("change", handleFiles, false);
+
         function handleFiles() {
             document.getElementById("galleryphoto-photo-form-submit").click();
         }
