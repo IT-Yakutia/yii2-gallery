@@ -36,13 +36,6 @@ class BackController extends Controller
         ];
     }
 
-    public function rules()
-    {
-        return [
-            ['files', 'maxSize' => 1024 * 1024 * 2, 'tooLarge' => 'File has to be smaller than 2MB']
-        ];
-    }
-
 	public function actions()
     {
         return [

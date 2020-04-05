@@ -41,9 +41,6 @@ class UploadAction extends Action
                 $photoalbum = $galleryforModelName::findOne($model->subject_id);
                 $model = new GalleryPhoto();
                 $model->subject_id = $photoalbum->id;
-
-                var_dump($model->files);die;
-
             }
 
             return $this->controller->render('@ityakutia/gallery/widgets/imgUploader/views/index', [
