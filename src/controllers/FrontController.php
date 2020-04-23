@@ -6,10 +6,11 @@ use Yii;
 use ityakutia\gallery\models\GalleryAlbum;
 use ityakutia\gallery\models\GalleryAlbumSearch;
 use ityakutia\gallery\models\GalleryVideo;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 
-class FrontController extends \frontend\components\Controller
+class FrontController extends Controller
 {
     public function beforeAction($action)
     {
