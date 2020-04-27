@@ -25,7 +25,9 @@ class FrontController extends Controller
 
         $videos = GalleryVideo::find()->where(['is_publish' => true])->orderBy(['created_at' => SORT_DESC])->all();
 
-        return $this->render('index', [
+        $view = Yii::$app->params['custom_view_for_modules']['gallery_front']['index'] ?? 'index';
+
+        return $this->render($view, [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'videos' => $videos,
@@ -34,9 +36,11 @@ class FrontController extends Controller
 
     public function actionView($id)
     {
+        $view = Yii::$app->params['custom_view_for_modules']['gallery_front']['view'] ?? 'view';
+
     	$model = $this->findModel($id);
         
-        return $this->render('view', [
+        return $this->render($view, [
         	'model' => $model,
     	]);
     }

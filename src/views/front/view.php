@@ -64,7 +64,6 @@ AlbumAsset::register($this);
                                             ])
                                             ?>
                                         </div>
-                                        <div class="dept_slider_nav"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                                     </div>
                                 </div>
                             </div>
