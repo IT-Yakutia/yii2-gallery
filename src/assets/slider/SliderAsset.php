@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
 
 class SliderAsset extends AssetBundle
 {
-    public $sourcePath = '@gallery/assets/album/src/';
+    public $sourcePath = '@ityakutia/gallery/assets/album/src/';
 
     public $js = [
         'owl.carousel.js',
@@ -22,6 +22,6 @@ class SliderAsset extends AssetBundle
         'animate.css',
     ];
     public $depends = [
-        '\frontend\assets\AppAsset',
+        'frontend\themes\basic\assets\BasicAsset',
     ];
 }

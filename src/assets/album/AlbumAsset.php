@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
 
 class AlbumAsset extends AssetBundle
 {
-    public $sourcePath = '@gallery/assets/album/src/';
+    public $sourcePath = '@ityakutia/gallery/assets/album/src/';
 
     public $css = [
         'css/progressive-image.min.css',
@@ -18,6 +18,6 @@ class AlbumAsset extends AssetBundle
         'js/progressive-image.min.js',
     ];
     public $depends = [
-        '\frontend\assets\AppAsset',
+        'frontend\themes\basic\assets\BasicAsset',
     ];
 }

@@ -28,7 +28,7 @@ AlbumAsset::register($this);
 
                                             <div class="owl-carousel owl-theme dept_slider">
                                                 
-                                                <?php foreach ($model->galleryAlboomPhotos as $key => $alboomPhoto) { ?>
+                                                <?php foreach ($model->galleryAlbumPhotos as $key => $alboomPhoto) { ?>
                                                     <div class="owl-item dept_item modaled">
                                                         <a href="<?= $alboomPhoto->photo->original; ?>" class="dept_image progressive replace">
                                                             <img src="<?= $alboomPhoto->photo->src; ?>" class="preview" alt="<?= $alboomPhoto->photo->name ?>">
@@ -45,7 +45,7 @@ AlbumAsset::register($this);
                                                 
                                             <?php
                                             $photos = [];
-                                            foreach ($model->galleryAlboomPhotos as $key => $photo) {
+                                            foreach ($model->galleryAlbumPhotos as $key => $photo) {
                                                 $photos[] = [
                                                     'src' => $photo->photo->original,
                                                     'title' => $photo->photo->name,

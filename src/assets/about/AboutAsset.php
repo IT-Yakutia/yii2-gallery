@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class AboutAsset extends AssetBundle
 {
-    public $sourcePath = '@gallery/assets/about/src/';
+    public $sourcePath = '@ityakutia/gallery/assets/about/src/';
     
     public $css = [
         'css/about.css',
@@ -23,6 +23,6 @@ class AboutAsset extends AssetBundle
         'js/about.js',
     ];
     public $depends = [
-        'frontend\assets\AppAsset',
+        'frontend\themes\basic\assets\BasicAsset',
     ];
 }
