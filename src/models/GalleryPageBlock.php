@@ -1,12 +1,10 @@
 <?php
 
-
 namespace ityakutia\gallery\models;
 
 use uraankhayayaal\page\models\PageBlock;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-// use ityakutia\blog\models\Article;
 
 /**
  * This is the model class for table "gallery_page_block".
