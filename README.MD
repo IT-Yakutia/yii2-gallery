@@ -77,3 +77,12 @@ Custom view file:
     ],
 ],
 ```
+
+RUN Fixtures
+```
+php yii fixture GalleryPhoto --namespace='ityakutia\gallery\tests\fixtures' 
+```
+Docker version:
+```
+php yii fixture GalleryPhoto --namespace='ityakutia\gallery\tests\fixtures' --interactive=0
+```
