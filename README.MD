@@ -76,10 +76,10 @@ Custom view file:
 ```
 
 Add fixtures:
-```
+```sh
 php yii fixture GalleryPhoto --namespace='ityakutia\gallery\tests\fixtures' 
 ```
 Add fixtures in docker:
-```
+```sh
 php yii fixture GalleryPhoto --namespace='ityakutia\gallery\tests\fixtures' --interactive=0
 ```
