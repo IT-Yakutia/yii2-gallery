@@ -1,7 +1,7 @@
 <?php
 
 use yii\widgets\Pjax;
-use Yii;
+// use Yii;
 
 ?>
 
