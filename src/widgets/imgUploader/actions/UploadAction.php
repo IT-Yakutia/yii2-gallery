@@ -41,6 +41,8 @@ class UploadAction extends Action
                 $photoalbum = $galleryforModelName::findOne($model->subject_id);
                 $model = new GalleryPhoto();
                 $model->subject_id = $photoalbum->id;
+                $model->subject_name = Yii::$app->request->post('GalleryPhoto')['subject_name'];
+                $model->subject_attribute = $className::RELATION_ATTRIBUTE;
             }
 
             return $this->controller->render('@ityakutia/gallery/widgets/imgUploader/views/index', [
