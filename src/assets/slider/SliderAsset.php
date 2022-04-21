@@ -21,7 +21,4 @@ class SliderAsset extends AssetBundle
         'owl.theme.default.css',
         'animate.css',
     ];
-    public $depends = [
-        'frontend\themes\basic\assets\BasicAsset',
-    ];
 }

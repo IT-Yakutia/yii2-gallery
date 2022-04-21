@@ -22,7 +22,4 @@ class AboutAsset extends AssetBundle
         'js/ScrollToPlugin.min.js',
         'js/about.js',
     ];
-    public $depends = [
-        'frontend\themes\basic\assets\BasicAsset',
-    ];
 }
