@@ -17,4 +17,8 @@ class AlbumAsset extends AssetBundle
     public $js = [
         'js/progressive-image.min.js',
     ];
+
+    public $depends = [
+        'yii\web\YiiAsset',
+    ];
 }

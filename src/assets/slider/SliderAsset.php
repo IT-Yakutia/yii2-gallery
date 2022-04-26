@@ -21,4 +21,8 @@ class SliderAsset extends AssetBundle
         'owl.theme.default.css',
         'animate.css',
     ];
+
+    public $depends = [
+        'yii\web\YiiAsset',
+    ];
 }
