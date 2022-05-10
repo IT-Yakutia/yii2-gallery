@@ -11,7 +11,7 @@ use \yii\helpers\Url;
           <div class="card">
             <div class="card-image">
               <a href="<?= $gallery->photo->original; ?>" class="progressive replace">
-                <?= Html::img($gallery->photo->src, ['alt' => $gallery->photo->name, 'class' => 'preview', 'width' => 650]); ?>
+                <?= Html::img(Yii::$app->params['domain'] . $gallery->photo->src, ['alt' => $gallery->photo->name, 'class' => 'preview', 'width' => 650]); ?>
               </a>
               <span class="card-title"><?= $gallery->photo->name; ?></span>
             </div>

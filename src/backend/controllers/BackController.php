@@ -1,6 +1,6 @@
 <?php
 
-namespace ityakutia\gallery\controllers;
+namespace ityakutia\gallery\backend\controllers;
 
 
 use yii\filters\AccessControl;
@@ -23,7 +23,7 @@ class BackController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['gallery']
+                        'permissions' => ['gallery']
                     ]
                 ],
             ],

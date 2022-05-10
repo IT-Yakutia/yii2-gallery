@@ -15,14 +15,23 @@
     "uraankhayayaal/yii2-sortable": "*",
     "uraankhayayaal/yii2-materializecomponents": "*",
     "uraankhayayaal/yii2-redactor": "*",
+    "it-yakutia/yii2-blog": "*",
     "powerkernel/yii2-photoswipe": "*"
-  },
-  "extra": {
-    "bootstrap": "ityakutia\\gallery\\Bootstrap"
   },
   "autoload": {
     "psr-4": {
       "ityakutia\\gallery\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
     }
   }
 }

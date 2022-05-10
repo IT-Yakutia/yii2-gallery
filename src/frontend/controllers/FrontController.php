@@ -1,6 +1,6 @@
 <?php
 
-namespace ityakutia\gallery\controllers;
+namespace ityakutia\gallery\frontend\controllers;
 
 use Yii;
 use ityakutia\gallery\models\GalleryAlbum;
@@ -25,7 +25,7 @@ class FrontController extends Controller
 
         $videos = GalleryVideo::find()->where(['is_publish' => true])->orderBy(['created_at' => SORT_DESC])->all();
 
-        $view = Yii::$app->params['custom_view_for_modules']['gallery_front']['index'] ?? 'index';
+        $view = Yii::$app->params['custom_view_for_modules']['gallery']['index'] ?? 'index';
 
         return $this->render($view, [
             'searchModel' => $searchModel,
@@ -38,7 +38,7 @@ class FrontController extends Controller
     {
     	$model = $this->findModel($id);
         
-        $view = Yii::$app->params['custom_view_for_modules']['gallery_front']['view'] ?? 'view';
+        $view = Yii::$app->params['custom_view_for_modules']['gallery']['view'] ?? 'view';
 
         return $this->render($view, [
         	'model' => $model,
