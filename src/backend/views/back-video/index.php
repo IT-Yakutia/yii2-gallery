@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => SerialColumn::class],
-                    ['class' => 'backend\components\grid\MaterialActionColumn', 'template' => '{update} {delete}'],
+                    ['class' => \uraankhayayaal\materializecomponents\grid\MaterialActionColumn::class, 'template' => '{update} {delete}'],
 
                     [
                         'attribute' => 'src',
