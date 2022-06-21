@@ -12,10 +12,10 @@
   ],
   "require": {
     "yiisoft/yii2": "~2.0.0",
-    "uraankhayayaal/yii2-sortable": "*",
-    "uraankhayayaal/yii2-materializecomponents": "*",
-    "uraankhayayaal/yii2-redactor": "*",
-    "powerkernel/yii2-photoswipe": "*"
+    "uraankhayayaal/yii2-sortable": "~1.0.1",
+    "uraankhayayaal/yii2-materializecomponents": "~1.0.1",
+    "uraankhayayaal/yii2-redactor": "~1.0.0",
+    "powerkernel/yii2-photoswipe": "~1.1.5"
   },
   "extra": {
     "bootstrap": "ityakutia\\gallery\\Bootstrap"
